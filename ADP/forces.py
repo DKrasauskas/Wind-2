@@ -2,6 +2,7 @@ import main as mn
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+
 #get to which sensor a specific point in the airfoil belongs to
 def interpolate(airfoil_point, sensors):
     indices = []

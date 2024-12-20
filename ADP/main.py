@@ -1,7 +1,7 @@
 import numpy as np
 import os
 #get experiment data
-file = open("C:/Users/domin/OneDrive/Stalinis kompiuteris/ADP/input.txt", "r").read()
+file = open("C:/Users/seppe/OneDrive - Delft University of Technology/Documents/0 - University/Bcs AE/Bsc AE2/AE2130-II Low Speed Windtunnel Test/GitHub/Newcode/Wind-2/ADP/input.txt", "r").read()
 file = file.replace(",", ".")
 file = np.stack([
         list(
@@ -20,7 +20,7 @@ airfoil = np.stack([
             len, 
             x.split(" ")
         )
-    ) for x in open("C:/Users/domin/OneDrive/Stalinis kompiuteris/ADP/airfoil.txt", "r").read().split("\n")
+    ) for x in open("C:/Users/seppe/OneDrive - Delft University of Technology/Documents/0 - University/Bcs AE/Bsc AE2/AE2130-II Low Speed Windtunnel Test/GitHub/Newcode/Wind-2/ADP/airfoil.txt", "r").read().split("\n")
 ]).astype(float)
 
 #get airfoil sensor locations
@@ -30,12 +30,12 @@ sensors_airfoil = np.stack([
             len, 
             x.split("\t")
         )
-    ) for x in open("C:/Users/domin/OneDrive/Stalinis kompiuteris/ADP/direct.txt", "r").read().split("\n")
+    ) for x in open("C:/Users/seppe/OneDrive - Delft University of Technology/Documents/0 - University/Bcs AE/Bsc AE2/AE2130-II Low Speed Windtunnel Test/GitHub/Newcode/Wind-2/ADP/direct.txt", "r").read().split("\n")
 ]).astype(float)
 
 #get wake sensor locations
 sensors_wake = np.array([
-    x for x in open("C:/Users/domin/OneDrive/Stalinis kompiuteris/ADP/wake.txt", "r").read().split("\n")
+    x for x in open("C:/Users/seppe/OneDrive - Delft University of Technology/Documents/0 - University/Bcs AE/Bsc AE2/AE2130-II Low Speed Windtunnel Test/GitHub/Newcode/Wind-2/ADP/wake.txt", "r").read().split("\n")
 ]).astype(float)
 
 airfoil_sensors = file[:, 6:55]
